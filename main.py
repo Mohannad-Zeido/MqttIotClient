@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 from influxdb import InfluxDBClient
+import time
 import secrets
 
 measurement_location = 0  # the position in the message corresponding to the location the measurement was taken
@@ -58,6 +59,7 @@ def setup_mqtt_client():
 
 
 def run():
+    time.sleep(10)
     setup_influxdb()
     setup_mqtt_client()
     mqtt_client.loop_forever()
