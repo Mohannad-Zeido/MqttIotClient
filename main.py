@@ -59,7 +59,6 @@ def setup_mqtt_client():
 
 
 def run():
-    time.sleep(10)
     setup_influxdb()
     setup_mqtt_client()
     mqtt_client.loop_forever()
